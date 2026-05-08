@@ -1,0 +1,33 @@
+# [DESIGNED_FOR: tm_server]
+# This workflow builds tm_server
+
+# Next to come:
+# Unit Testing: [UNDER_WAY]
+
+name: Go
+
+on:
+  push:
+    branches: [ "main" ]
+  pull_request:
+    branches: [ "main" ]
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Go
+      uses: actions/setup-go@v4
+      with:
+        go-version: '1.21'
+
+    - name: Change directory
+      run: cd tm_server
+
+    - name: Build
+      run: go build -o tm_server
+
+
