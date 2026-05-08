@@ -1,0 +1,14 @@
+syntax = "proto3";
+
+package msg;
+
+option go_package = "./msgpb";
+
+service MessageService {
+  rpc MsgStream(stream MsgMessage) returns (stream MsgMessage);
+}
+
+message MsgMessage {
+  string user = 1;
+  string message = 2;
+}
