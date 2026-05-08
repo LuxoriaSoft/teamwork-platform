@@ -24,10 +24,8 @@ jobs:
       with:
         go-version: '1.21'
 
-    - name: Change directory
-      run: cd tm_server
-
     - name: Build
       run: go build -o tm_server
+      working-directory: tm_server
 
 
