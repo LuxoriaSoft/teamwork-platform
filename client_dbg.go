@@ -1,4 +1,4 @@
-package main
+package client_dgb_main
 
 import (
 	"bufio"
